@@ -30,13 +30,13 @@ import pandas as pd
 import plotly
 
 #figure 1
-df = pd.read_csv("OTT Platforms.csv")
+df = pd.read_csv("data/OTT Platforms.csv")
 list_count_by_Gender=df['Gender'].value_counts()
 list_count_by_Gender_list=list(list_count_by_Gender.index)
 fig1 = px.pie(values=list_count_by_Gender, names=list_count_by_Gender.index)
 
 #figure2
-df1 = pd.read_csv("Series.csv")
+df1 = pd.read_csv("data/Series.csv")
 list_count_by_Residence=df['Residence'].value_counts()
 list_count_by_Residence_list=list(list_count_by_Residence.index)
 fig2 = px.pie(values=list_count_by_Residence, names=list_count_by_Residence.index ,title="Residence")
@@ -65,7 +65,7 @@ fig4=px.bar(df_g, x='Age_Category', y=['OTT_Platforms'], text=df_g['Percentage']
 
 
 #figure5
-states = pd.read_csv("states.csv")
+states = pd.read_csv("data/states.csv")
 state_count_df=states.groupby(['State']).size().reset_index(name = 'counts')
 geojson="https://gist.githubusercontent.com/jbrobst/56c13bbbf9d97d187fea01ca62ea5112/raw/e388c4cae20aa53cb5090210a42ebb9b765c0a36/india_states.geojson"
 response = urlopen(geojson)
