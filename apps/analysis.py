@@ -18,7 +18,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 #figure6
-df_m= pd.read_csv("Movies.csv")
+df_m= pd.read_csv("data/Movies.csv")
 list_count_by_Movie_Genre=df_m['Movie_Genre'].value_counts()
 list_count_by_Movie_Genre_list=list(list_count_by_Movie_Genre.index)
 fig6 = px.bar(df_m, x=list_count_by_Movie_Genre.index ,y=list_count_by_Movie_Genre)
@@ -33,7 +33,7 @@ fig6=px.bar(df_g, x='Movie_Genre', y=['Counts'], text=df_g['Percentage'].apply(l
 fig6.update_traces(marker_color='green')
 
 #figure7
-df_s= pd.read_csv("Series.csv")
+df_s= pd.read_csv("data/Series.csv")
 list_count_by_Series_Genre=df_s['Series_Genre'].value_counts()
 list_count_by_Series_Genre_list=list(list_count_by_Series_Genre.index)
 fig7= px.bar(df_s, x=list_count_by_Series_Genre.index ,y=list_count_by_Series_Genre)
@@ -48,7 +48,7 @@ fig7=px.bar(df_g, x='Series_Genre', y=['Counts'], text=df_g['Percentage'].apply(
 fig7.update_traces(marker_color='orange')
 
 #figure8
-df_l= pd.read_csv("Languages preferred.csv")
+df_l= pd.read_csv("data/Languages preferred.csv")
 list_count_by_Languages_Preferred=df_l['Languages_Preferred'].value_counts()
 list_count_by_Languages_Preferred_list=list(list_count_by_Languages_Preferred.index)
 fig8= px.bar(df_l, x=list_count_by_Languages_Preferred.index ,y=list_count_by_Languages_Preferred)
@@ -63,7 +63,7 @@ fig8=px.bar(df_g1, x='Languages_Preferred', y=['Counts'], text=df_g1['Percentage
 fig8.update_traces(marker_color='brown')
 
 #figure9
-df_n = pd.read_csv("fornem.csv")
+df_n = pd.read_csv("data/fornem.csv")
 fig9 = px.scatter(df_n, x="OTT_Platforms" ,
                  y="Age_Category", animation_frame="Occupational_Status",
                  color="Gender",range_y=[0,100],size_max=25, size='Age_Category')
