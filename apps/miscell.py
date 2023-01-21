@@ -15,7 +15,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 #figure10
-df_time= pd.read_csv("Time Spent.csv")
+df_time= pd.read_csv("data/Time Spent.csv")
 list_count_by_Time_Spent=df_time['Time_Spent'].value_counts()
 list_count_by_Time_Spent_list=list(list_count_by_Time_Spent.index)
 fig10= px.bar(df_time,x=list_count_by_Time_Spent.index ,y=list_count_by_Time_Spent)
@@ -29,7 +29,7 @@ df_g2=df_g2.sort_values(by=['Counts'],ascending=False)
 fig10=px.bar(df_g2, x='Time_Spent', y=['Counts'], text=df_g2['Percentage'].apply(lambda x: '{0:1.2f}%'.format(x)))
 
 #figure11
-df_d= pd.read_csv("devices.csv")
+df_d= pd.read_csv("data/devices.csv")
 list_count_by_Device_Used=df_d['Device_Used'].value_counts()
 list_count_by_Device_Used_list=list(list_count_by_Device_Used.index)
 fig11= px.bar(df_d, x=list_count_by_Device_Used.index ,y=list_count_by_Device_Used)
